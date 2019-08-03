@@ -7,7 +7,7 @@
     "clean": "rimraf dist",
     "build": "tsc",
     "deploy": "docker build -t tesla-dashboard-server .",
-    "start": "node ./dist/server.js",
+    "start": "npm build && node ./dist/server.js",
     "test": "jest --coverage --verbose"
   },
   "dependencies": {

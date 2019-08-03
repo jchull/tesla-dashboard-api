@@ -1,20 +1,23 @@
-import {model, Document, Schema} from 'mongoose';
+import {Document, model, Schema} from 'mongoose';
+import {ITeslaAccount} from './TeslaAccount';
+import {IVehicle} from './Vehicle';
 
 export interface IUser extends Document {
-  id: number;
   username: string;
+  email: string;
   role: string;
-  teslaAuthEmail: string;
-  teslaAuthPassword: string;
+  teslaAccounts: [ITeslaAccount];
+  vehicles: [IVehicle];
 }
 
 
 const UserSchema: Schema = new Schema({
-  id: {type: Number, required: true, unique: true},
   username: {type: String, required: true, unique: true},
+  email: {type: String, required: true, unique: true},
   role: {type: String, required: true, unique: false},
-  teslaAuthEmail: {type: String, required: false, unique: false},
-  teslaAuthPassword: {type: String, required: false, unique: false}
+  teslaAccounts: [{type: Schema.Types.ObjectId, ref: 'TeslaAccount'}],
+  vehicles: [{type: Schema.Types.ObjectId, ref: 'Vehicle'}]
+
 });
 
 export default model('User', UserSchema);

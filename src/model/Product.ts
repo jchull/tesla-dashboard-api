@@ -1,9 +1,9 @@
 import {Document, model, Schema} from 'mongoose';
 
-export interface IProductSchema extends Document {
+export interface IProduct extends Document {
   id: string;
   type: string;
-  name: string;
+  display_name: string;
   color?: string;
 }
 
@@ -11,8 +11,9 @@ export interface IProductSchema extends Document {
 const ProductSchema: Schema = new Schema({
   id: {type: String, required: true, unique: true},
   type: {type: String, required: true},
-  name: {type: String, required: true},
+  display_name: {type: String, required: true},
   color: {type: String, required: false}
 });
 
 export default model('Product', ProductSchema);
+

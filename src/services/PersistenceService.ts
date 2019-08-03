@@ -1,22 +1,23 @@
-import {Connection, createConnection} from 'mongoose';
-import Configuration, {DEFAULT_CONFIG} from '../model/Configuration';
+import {Mongoose, connect} from 'mongoose';
+import Configuration, {IConfiguration} from '../model/Configuration';
+import Vehicle, {IVehicle} from '../model/Vehicle';
 
 export class PersistenceService {
   endpoint: string;
-  connection?: Connection;
 
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
 
   async connect() {
-    return createConnection(this.endpoint, {useNewUrlParser: true})
-        .then((conn) => {
-          this.connection = conn;
-          this.connection.on('disconnected', () => {
-            console.log('Reconnecting to DB...');
-            this.connect();
-          });
+    // @ts-ignore
+    // Mongoose.Promise = global.Promise;
+    connect(this.endpoint, { useNewUrlParser: true } )
+        .then((mongoose) => {
+          // mongoose.on('disconnected', () => {
+          //   console.log('Reconnecting to DB...');
+          //   this.connect();
+          // });
           return console.log(`Successfully connected to DB`);
         })
         .catch(error => {
@@ -25,17 +26,20 @@ export class PersistenceService {
         });
   }
 
-  async getConfiguration() {
-    if (this.connection) {
-      const confModel = this.connection.model('Configuration');
-      return confModel.findOne(null, (err, conf) => {
-        if (!conf) {
-          console.log('Creating default configuration...');
-          return confModel.create(DEFAULT_CONFIG);
-        }
-        return confModel;
-      });
-    }
+  async getConfiguration(): Promise<IConfiguration> {
+    // @ts-ignore
+    return Configuration.findOne({})
+  }
+
+
+  async getVehicles(): Promise<[IVehicle]> {
+    // @ts-ignore
+    return Vehicle.find({});
+  }
+
+  async addVehicle(vehicle: IVehicle): Promise<IVehicle> {
+    // @ts-ignore
+    return Vehicle.create(vehicle);
   }
 
 

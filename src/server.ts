@@ -1,5 +1,6 @@
 import {IConfiguration} from './model/Configuration';
 import {createServer} from 'http';
+// @ts-ignore
 import express from 'express';
 import {applyMiddleware, applyRoutes} from './util';
 import routes from './routes';
@@ -26,7 +27,6 @@ db.connect()
     const server = createServer(router);
     server.listen(conf.apiPort, () =>
         console.log(`Server is running at http://localhost:${conf.apiPort} ...`));
-
     return server;
   });
 
