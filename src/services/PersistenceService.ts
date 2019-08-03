@@ -1,59 +1,43 @@
-import {Mongoose, createConnection} from 'mongoose';
-import {IConfiguration} from '../model/Configuration';
+import {Connection, createConnection} from 'mongoose';
+import Configuration, {DEFAULT_CONFIG} from '../model/Configuration';
 
 export class PersistenceService {
   endpoint: string;
-  connection?: Mongoose;
+  connection?: Connection;
 
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
 
   async connect() {
-    return createConnection(this.endpoint, { useNewUrlParser: true })
-        .then(() => {
+    return createConnection(this.endpoint, {useNewUrlParser: true})
+        .then((conn) => {
+          this.connection = conn;
+          this.connection.on('disconnected', () => {
+            console.log('Reconnecting to DB...');
+            this.connect();
+          });
           return console.log(`Successfully connected to DB`);
         })
         .catch(error => {
-          console.log("Error connecting to database: ", error);
+          console.log('Error connecting to database: ', error);
           return process.exit(1);
         });
-
-      // mongoose.connection.on("disconnected", connect);
   }
 
   async getConfiguration() {
     if (this.connection) {
       const confModel = this.connection.model('Configuration');
-      let conf = confModel.findOne();
-      if (!conf) {
-        confModel.create(DEFAULT_CONFIG);
-      }
+      return confModel.findOne(null, (err, conf) => {
+        if (!conf) {
+          console.log('Creating default configuration...');
+          return confModel.create(DEFAULT_CONFIG);
+        }
+        return confModel;
+      });
     }
   }
 
 
 }
-
-
-// @ts-ignore
-const DEFAULT_CONFIG: IConfiguration = {
-  apiPort: 3001,
-  ownerBaseUrl: 'https://owner-api.teslamotors.com',
-  teslaAuthEmail: '',
-  teslaAuthPassword: '',
-  teslaClientKey: '81527cff06843c8634fdc09e8ac0abefb46ac849f38fe1e431c2ef2106796384',
-  teslaClientSecret: 'c7257eb71a564034f9419ee651c7d0e5f7aa6bfbd18bafb5c5c033b093bb2fa3'
-
-};
-
-// API_PORT=3001
-// OWNER_BASE_URL=https://owner-api.teslamotors.com
-// TESLA_CLIENT_ID=81527cff06843c8634fdc09e8ac0abefb46ac849f38fe1e431c2ef2106796384
-// TESLA_CLIENT_SECRET=c7257eb71a564034f9419ee651c7d0e5f7aa6bfbd18bafb5c5c033b093bb2fa3
-// TESLA_AUTH_EMAIL=
-//     TESLA_AUTH_PASSWORD=
-//         ES_ENDPOINT=http://elastic:9200
-// ES_INDEX=tesla
-// POLLING_INTERVAL=60000
 
