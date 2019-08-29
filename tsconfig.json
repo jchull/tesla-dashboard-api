@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {
       "*": [ "node_modules/@types/*", "*"]
-    }
+    },
+    "declaration": true
   }
 }

@@ -1,7 +1,6 @@
-import {Document} from 'mongoose';
 import {IVehicleSession} from './VehicleSession';
 
-export interface IVehicleState extends Document {
+export interface IVehicleState {
   id_s: string,
   vehicle_id: number,
   is_key_state: boolean,
