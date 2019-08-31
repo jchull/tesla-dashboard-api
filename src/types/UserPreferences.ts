@@ -12,6 +12,7 @@ export interface IChargingPreferences {
 }
 
 export interface IDrivingPreferences {
+  pollingIntervalsSeconds: number;
 
 }
 
@@ -34,7 +35,9 @@ export const DEFAULT_PREFERENCES:IUserPreferences =  {
     distanceUnits: 'miles',
     currencyCode: 'USD'
   },
-  driving:{},
+  driving:{
+    pollingIntervalsSeconds: 60
+  },
   charging:{
     minChargeDurationMinutes: 5,
     costPerKwhHome: 0.12,

@@ -1,4 +1,4 @@
-import {IUser} from './types/User';
+import {IUser, UserRoles} from './types/User';
 import {IConfiguration} from './types/Configuration';
 import {ITeslaAccount} from './types/TeslaAccount';
 import {IVehicleData} from './types/tesla/VehicleData';
@@ -29,5 +29,6 @@ export {
   ISpeedLimitMode,
   IGuiSettings,
   IVehicleConfig,
-  IUserPreferences
+  IUserPreferences,
+  UserRoles
 };
