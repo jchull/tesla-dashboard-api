@@ -1,4 +1,5 @@
 export interface IVehicle {
+  _id: string;
   id_s: string;
   vehicle_id: number;
   vin: string;

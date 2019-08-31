@@ -1,8 +1,8 @@
 export interface ISpeedLimitMode {
-  active: Boolean,
-  current_limit_mph: Number,
-  max_limit_mph: Number,
-  min_limit_mph: Number,
-  pin_code_set: Boolean
+  active: boolean;
+  current_limit_mph: number;
+  max_limit_mph: number;
+  min_limit_mph: number;
+  pin_code_set: boolean
 }
 

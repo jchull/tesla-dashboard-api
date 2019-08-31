@@ -6,8 +6,10 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "clean": "rimraf lib",
+    "prepare": "npm run build",
     "build": "tsc"
   },
+  "files": ["lib"],
   "dependencies": {},
   "moduleFileExtensions": [
     "ts",
