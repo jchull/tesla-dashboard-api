@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "postinstall": "npm link",
     "clean": "rimraf lib",
     "prepare": "npm run build",
     "build": "tsc"

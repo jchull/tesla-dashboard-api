@@ -7,7 +7,7 @@ export interface IChargingPreferences {
    * array of polling intervals in seconds to use while charging
    * level 1 charging = [0], level 2 = [1], etc
    */
-  pollingIntervalsSeconds: Array<number>;
+  pollingIntervalsSeconds: [number];
 
 }
 

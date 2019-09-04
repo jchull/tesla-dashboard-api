@@ -16,7 +16,8 @@ export interface IUser {
   username: string;
   email: string;
   role: TUserRoles;
-  pwdHash: string;
-  teslaAccounts: Array<ITeslaAccount>;
-  vehicles?: Array<IVehicle>;
+  password: string | undefined;
+  pwdHash: string | undefined;
+  teslaAccounts: [ITeslaAccount];
+  vehicles?: [IVehicle];
 }
