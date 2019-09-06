@@ -12,12 +12,11 @@ type TUserRoles =
 
 
 export interface IUser {
-  _id: string;
   username: string;
   email: string;
-  role: TUserRoles;
-  password: string | undefined;
-  pwdHash: string | undefined;
-  teslaAccounts: [ITeslaAccount];
+  role?: TUserRoles;
+  password?: string;
+  pwdHash?: string;
+  teslaAccounts?: [ITeslaAccount];
   vehicles?: [IVehicle];
 }

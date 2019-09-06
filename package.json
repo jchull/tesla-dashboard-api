@@ -5,12 +5,14 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "postinstall": "npm link",
+    "link": "npm link",
     "clean": "rimraf lib",
     "prepare": "npm run build",
     "build": "tsc"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "dependencies": {},
   "moduleFileExtensions": [
     "ts",
