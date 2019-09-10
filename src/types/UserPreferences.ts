@@ -1,48 +1,32 @@
 import {IUser} from './User';
 
-export interface IChargingPreferences {
-  minChargeDurationMinutes: number;
-  costPerKwhHome: number;
-  costPerKwhSupercharging: number;
+export interface IUserPreferences {
+  user: IUser | 'default';
+  charging_minDurationMinutes: number;
+  charging_costPerKwhHome: number;
+  charging_costPerKwhSupercharging: number;
   /**
    * tuple of polling intervals in seconds to use while charging
    * level 1 charging = [0], level 2 = [1], etc
    */
-  pollingIntervalsSeconds: [number,number,number];
+  charging_pollingIntervalsSeconds: [number, number, number];
 
-}
 
-export interface IDrivingPreferences {
-  pollingIntervalsSeconds: number;
+  driving_pollingIntervalsSeconds: number;
 
-}
 
-export interface IDisplayPreferences {
-  currencyCode: string;
-  distanceUnits: string;
-}
-
-export interface IUserPreferences {
-  user: IUser | 'default';
-  charging: IChargingPreferences;
-  driving: IDrivingPreferences;
-  display: IDisplayPreferences;
+  display_currencyCode: string;
+  display_distanceUnits: string;
 }
 
 
-export const DEFAULT_PREFERENCES:IUserPreferences =  {
+export const DEFAULT_PREFERENCES: IUserPreferences = {
   user: 'default',
-  display: {
-    distanceUnits: 'miles',
-    currencyCode: 'USD'
-  },
-  driving:{
-    pollingIntervalsSeconds: 60
-  },
-  charging:{
-    minChargeDurationMinutes: 5,
-    costPerKwhHome: 0.12,
-    costPerKwhSupercharging: 0.28,
-    pollingIntervalsSeconds: [600, 200, 30]
-  }
+  display_distanceUnits: 'miles',
+  display_currencyCode: 'USD',
+  driving_pollingIntervalsSeconds: 60,
+  charging_minDurationMinutes: 5,
+  charging_costPerKwhHome: 0.12,
+  charging_costPerKwhSupercharging: 0.28,
+  charging_pollingIntervalsSeconds: [600, 200, 30]
 };
