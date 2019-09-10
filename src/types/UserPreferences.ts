@@ -1,3 +1,4 @@
+import {IUser} from './User';
 
 export interface IChargingPreferences {
   minChargeDurationMinutes: number;
@@ -22,7 +23,7 @@ export interface IDisplayPreferences {
 }
 
 export interface IUserPreferences {
-  _id: string;
+  user: IUser | 'default';
   charging: IChargingPreferences;
   driving: IDrivingPreferences;
   display: IDisplayPreferences;
@@ -30,7 +31,7 @@ export interface IUserPreferences {
 
 
 export const DEFAULT_PREFERENCES:IUserPreferences =  {
-  _id: 'default',
+  user: 'default',
   display: {
     distanceUnits: 'miles',
     currencyCode: 'USD'
