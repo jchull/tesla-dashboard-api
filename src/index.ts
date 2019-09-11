@@ -12,7 +12,7 @@ import {IDriveSession} from './types/model/DriveSession';
 import {IDriveState} from './types/model/DriveState';
 import {IChargeSession} from './types/model/ChargeSession';
 import {IChargeState} from './types/model/ChargeState';
-import {IUserPreferences} from './types/UserPreferences';
+import {IUserPreferences, DEFAULT_PREFERENCES} from './types/UserPreferences';
 
 export {
   IUser,
@@ -30,5 +30,6 @@ export {
   IGuiSettings,
   IVehicleConfig,
   IUserPreferences,
-  UserRoles
+  UserRoles,
+  DEFAULT_PREFERENCES
 };

@@ -13,18 +13,22 @@ export interface IUserPreferences {
 
 
   driving_pollingIntervalsSeconds: number;
+  driving_minDurationMinutes: number;
 
 
   display_currencyCode: string;
-  display_distanceUnits: string;
+  display_distanceUnits: 'mi' | 'km';
+  display_tempUnits: 'F' | 'C'
 }
 
 
 export const DEFAULT_PREFERENCES: IUserPreferences = {
   user: 'default',
-  display_distanceUnits: 'miles',
+  display_distanceUnits: 'mi',
   display_currencyCode: 'USD',
+  display_tempUnits: 'F',
   driving_pollingIntervalsSeconds: 60,
+  driving_minDurationMinutes: 5,
   charging_minDurationMinutes: 5,
   charging_costPerKwhHome: 0.12,
   charging_costPerKwhSupercharging: 0.28,
