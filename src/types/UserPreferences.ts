@@ -1,7 +1,6 @@
-import {IUser} from './User';
-
 export interface IUserPreferences {
-  user: IUser | 'default';
+  _id?: string;
+  username: string;
   charging_minDurationMinutes: number;
   charging_costPerKwhHome: number;
   charging_costPerKwhSupercharging: number;
@@ -23,7 +22,7 @@ export interface IUserPreferences {
 
 
 export const DEFAULT_PREFERENCES: IUserPreferences = {
-  user: 'default',
+  username: 'default',
   display_distanceUnits: 'mi',
   display_currencyCode: 'USD',
   display_tempUnits: 'F',

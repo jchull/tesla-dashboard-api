@@ -1,5 +1,5 @@
 export interface IConfiguration {
-  _id: string;
+  _id?: string;
   apiPort: number;
   ownerBaseUrl: string;
   teslaClientKey: string;
