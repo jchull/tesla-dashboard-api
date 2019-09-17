@@ -24,5 +24,6 @@ export interface IVehicle {
   time_to_full_charge?: number;
   charge_limit_soc?: number;
   last_session_id: string;
+  username?: string;
 }
 

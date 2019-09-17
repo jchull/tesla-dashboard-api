@@ -1,6 +1,3 @@
-import {ITeslaAccount} from './TeslaAccount';
-import {IVehicle} from './tesla/Vehicle';
-
 export enum UserRoles {
   Standard,
   Admin,
@@ -18,6 +15,4 @@ export interface IUser {
   role?: TUserRoles;
   password?: string;
   pwdHash?: string;
-  teslaAccounts?: [ITeslaAccount];// TODO remove this
-  vehicles?: [IVehicle];// TODO remove this
 }
