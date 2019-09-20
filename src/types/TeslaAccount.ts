@@ -6,5 +6,6 @@ export interface ITeslaAccount {
   access_token?: string;
   email: string;
   username?: string;
+  account_status?: string;
 }
 
