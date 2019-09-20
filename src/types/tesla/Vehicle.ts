@@ -1,3 +1,5 @@
+import {ISyncPreferences} from '../SyncPreferences';
+
 export interface IVehicle {
   _id: string;
   id_s: string;
@@ -25,5 +27,7 @@ export interface IVehicle {
   charge_limit_soc?: number;
   last_session_id: string;
   username?: string;
+  sync_preferences?: ISyncPreferences;
+  sync_state?: string;
 }
 

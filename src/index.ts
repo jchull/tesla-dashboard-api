@@ -12,7 +12,8 @@ import {IDriveSession} from './types/model/DriveSession';
 import {IDriveState} from './types/model/DriveState';
 import {IChargeSession} from './types/model/ChargeSession';
 import {IChargeState} from './types/model/ChargeState';
-import {IUserPreferences, DEFAULT_PREFERENCES} from './types/UserPreferences';
+import {DEFAULT_PREFERENCES, IUserPreferences} from './types/UserPreferences';
+import {DEFAULT_SYNC_PREFERENCES, ISyncPreferences} from './types/SyncPreferences';
 
 export {
   IUser,
@@ -31,5 +32,7 @@ export {
   IVehicleConfig,
   IUserPreferences,
   UserRoles,
-  DEFAULT_PREFERENCES
+  DEFAULT_PREFERENCES,
+  ISyncPreferences,
+  DEFAULT_SYNC_PREFERENCES
 };
