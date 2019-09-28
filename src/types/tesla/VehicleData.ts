@@ -11,7 +11,7 @@ export interface IVehicleData {
   display_name: string;
   option_codes?: string;
   color?: string;
-  tokens?: [string];
+  tokens?: string[];
   state?: string;
   in_service?: boolean;
   calendar_enabled?: boolean;
@@ -53,6 +53,7 @@ export interface IVehicleData {
     managed_charging_start_time?: number;
     managed_charging_user_canceled?: boolean;
     max_range_charge_counter?: number;
+    minutes_to_full_charge?: number;
     not_enough_power_to_heat?: boolean;
     scheduled_charging_pending?: boolean;
     scheduled_charging_start_time?: number;
@@ -66,6 +67,7 @@ export interface IVehicleData {
     battery_heater?: boolean;
     battery_heater_no_power: any;
     climate_keeper_mode: string;
+    defrost_mode?: number;
     driver_temp_setting: number;
     fan_status?: number;
     inside_temp: number;
@@ -146,6 +148,12 @@ export interface IVehicleData {
     calendar_supported?: boolean;
     car_version?: string;
     center_display_state?: number;
+    fd_window?: number;
+    fp_window?: number;
+    rd_window?: number;
+    rp_window?: number;
+    smart_summon_available?: boolean;
+    summon_standby_mode_enabled?: boolean;
     df?: number;
     dr?: number;
     ft?: number;
@@ -168,8 +176,11 @@ export interface IVehicleData {
     sentry_mode?: boolean;
     sentry_mode_available?: boolean;
     software_update?: {
+      download_perc?: number;
+      install_perc?: number;
       expected_duration_sec?: number;
       status?: string
+      version?: string
     };
     speed_limit_mode?: {
       active?: boolean;
