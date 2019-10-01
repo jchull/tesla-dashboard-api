@@ -1,5 +1,6 @@
 import {IChargeState} from './ChargeState';
 import {IVehicleSession} from './VehicleSession';
+import {IVehicle} from '../tesla/Vehicle';
 
 export interface IChargeSession extends IVehicleSession {
   _id: string;
@@ -27,5 +28,6 @@ export interface IChargeSession extends IVehicleSession {
   scheduled_charging_start_time?: number;
   trip_charging?: boolean;
   first: IChargeState;
-  last?: IChargeState
+  last?: IChargeState;
+  vehicle?: IVehicle;
 }
