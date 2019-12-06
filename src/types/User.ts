@@ -8,7 +8,7 @@ type TUserRoles =
     UserRoles.Admin;
 
 
-export interface IUser {
+export interface User {
   _id?: string;
   username: string;
   email: string;

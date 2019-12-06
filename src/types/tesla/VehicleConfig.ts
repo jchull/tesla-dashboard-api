@@ -1,4 +1,4 @@
-export interface IVehicleConfig {
+export interface VehicleConfig {
   id_s: string;
   can_accept_navigation_requests: boolean;
   can_actuate_trunks: boolean;
@@ -9,7 +9,7 @@ export interface IVehicleConfig {
   exterior_color: string;
   has_air_suspension: boolean;
   has_ludicrous_mode: boolean;
-  key_version: Number;
+  key_version: number;
   motorized_charge_port: boolean;
   plg: boolean;
   rear_seat_heaters: number;
@@ -22,5 +22,5 @@ export interface IVehicleConfig {
   third_row_seats: string;
   timestamp: number;
   use_range_badging: boolean;
-  wheel_type: string
+  wheel_type: string;
 }

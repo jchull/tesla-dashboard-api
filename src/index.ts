@@ -1,38 +1,36 @@
-import {IUser, UserRoles} from './types/User';
-import {IConfiguration} from './types/Configuration';
-import {ITeslaAccount} from './types/TeslaAccount';
-import {IVehicleData} from './types/tesla/VehicleData';
-import {IVehicleConfig} from './types/tesla/VehicleConfig';
-import {IVehicle} from './types/tesla/Vehicle';
-import {ISpeedLimitMode} from './types/tesla/SpeedLimitMode';
-import {IGuiSettings} from './types/tesla/GuiSettings';
-import {IVehicleSession} from './types/model/VehicleSession';
-import {IVehicleState} from './types/model/VehicleState';
-import {IDriveSession} from './types/model/DriveSession';
-import {IDriveState} from './types/model/DriveState';
-import {IChargeSession} from './types/model/ChargeSession';
-import {IChargeState} from './types/model/ChargeState';
-import {DEFAULT_PREFERENCES, IUserPreferences} from './types/UserPreferences';
-import {DEFAULT_SYNC_PREFERENCES, ISyncPreferences} from './types/SyncPreferences';
+import {User, UserRoles} from './types/User';
+import {Configuration} from './types/Configuration';
+import {TeslaAccount} from './types/TeslaAccount';
+import {VehicleData} from './types/tesla/VehicleData';
+import {VehicleConfig} from './types/tesla/VehicleConfig';
+import {Vehicle} from './types/tesla/Vehicle';
+import {SpeedLimitMode} from './types/tesla/SpeedLimitMode';
+import {GuiSettings} from './types/tesla/GuiSettings';
+import {VehicleState} from './types/model/VehicleState';
+import {DriveSession} from './types/model/DriveSession';
+import {DriveState} from './types/model/DriveState';
+import {ChargeSession} from './types/model/ChargeSession';
+import {ChargeState} from './types/model/ChargeState';
+import {DEFAULT_PREFERENCES, UserPreferences} from './types/UserPreferences';
+import {DEFAULT_SYNC_PREFERENCES, SyncPreferences} from './types/SyncPreferences';
 
 export {
-  IUser,
-  IConfiguration,
-  ITeslaAccount,
-  IVehicleData,
-  IChargeSession,
-  IChargeState,
-  IVehicleSession,
-  IVehicle,
-  IVehicleState,
-  IDriveSession,
-  IDriveState,
-  ISpeedLimitMode,
-  IGuiSettings,
-  IVehicleConfig,
-  IUserPreferences,
+  User,
+  Configuration,
+  TeslaAccount,
+  VehicleData,
+  ChargeSession,
+  ChargeState,
+  Vehicle,
+  VehicleState,
+  DriveSession,
+  DriveState,
+  SpeedLimitMode,
+  GuiSettings,
+  VehicleConfig,
+  UserPreferences,
   UserRoles,
   DEFAULT_PREFERENCES,
-  ISyncPreferences,
+  SyncPreferences,
   DEFAULT_SYNC_PREFERENCES
 };

@@ -1,16 +1,16 @@
-export interface IUserPreferences {
+export interface UserPreferences {
   _id?: string;
   username: string;
 
-  display_currencyCode: string;
-  display_distanceUnits: 'mi' | 'km';
-  display_tempUnits: 'F' | 'C'
+  displayCurrencyCode: string;
+  displayDistanceUnits: 'mi' | 'km';
+  displayTempUnits: 'F' | 'C';
 }
 
 
-export const DEFAULT_PREFERENCES: IUserPreferences = {
+export const DEFAULT_PREFERENCES: UserPreferences = {
   username: 'default',
-  display_distanceUnits: 'mi',
-  display_currencyCode: 'USD',
-  display_tempUnits: 'F'
+  displayDistanceUnits: 'mi',
+  displayCurrencyCode: 'USD',
+  displayTempUnits: 'F'
 };

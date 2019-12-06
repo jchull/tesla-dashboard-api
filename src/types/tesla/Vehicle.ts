@@ -1,6 +1,6 @@
-import {ISyncPreferences} from '../SyncPreferences';
+import {SyncPreferences} from '../SyncPreferences';
 
-export interface IVehicle {
+export interface Vehicle {
   _id: string;
   id_s: string;
   vehicle_id: number;
@@ -27,7 +27,7 @@ export interface IVehicle {
   charge_limit_soc?: number;
   last_session_id: string;
   username?: string;
-  sync_preferences?: ISyncPreferences;
+  sync_preferences?: SyncPreferences;
   sync_state?: string;
 }
 

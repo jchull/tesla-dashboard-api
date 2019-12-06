@@ -2,7 +2,9 @@
  * Matches response from Tesla API
  */
 
-export interface IVehicleData {
+/* eslint camelcase: 0 */
+
+export interface VehicleData {
   id: number;
   id_s: string;
   user_id: number;

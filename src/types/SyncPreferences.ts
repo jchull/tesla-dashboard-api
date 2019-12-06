@@ -1,34 +1,34 @@
-export interface ISyncPreferences {
+export interface SyncPreferences {
   _id: string;
   enabled: boolean;
-  account_id?: string;
+  accountId?: string;
   sleepTriggerSeconds: number;
-  charging_minDurationMinutes: number;
-  charging_costPerKwhHome: number;
-  charging_costPerKwhSupercharging: number;
-  charging_maxGapSeconds: number;
+  chargingMinDurationMinutes: number;
+  chargingCostPerKwhHome: number;
+  chargingCostPerKwhSupercharging: number;
+  chargingMaxGapSeconds: number;
   /**
    * tuple of polling intervals in seconds to use while charging
    * level 1 charging = [0], level 2 = [1], etc
    */
-  charging_pollingIntervalsSeconds: [number, number, number];
+  chargingPollingIntervalsSeconds: [number, number, number];
 
-  driving_pollingIntervalSeconds: number;
-  driving_minDurationMinutes: number;
-  driving_maxGapSeconds: number;
+  drivingPollingIntervalSeconds: number;
+  drivingMinDurationMinutes: number;
+  drivingMaxGapSeconds: number;
 }
 
 
-export const DEFAULT_SYNC_PREFERENCES: ISyncPreferences = {
+export const DEFAULT_SYNC_PREFERENCES: SyncPreferences = {
   _id: 'default',
   enabled: false,
-  charging_maxGapSeconds: 300,
-  charging_minDurationMinutes: 5,
-  charging_costPerKwhHome: 0.12,
-  charging_costPerKwhSupercharging: 0.28,
-  charging_pollingIntervalsSeconds: [600, 200, 30],
-  driving_maxGapSeconds: 300,
-  driving_pollingIntervalSeconds: 60,
-  driving_minDurationMinutes: 5,
+  chargingMaxGapSeconds: 300,
+  chargingMinDurationMinutes: 5,
+  chargingCostPerKwhHome: 0.12,
+  chargingCostPerKwhSupercharging: 0.28,
+  chargingPollingIntervalsSeconds: [600, 200, 30],
+  drivingMaxGapSeconds: 300,
+  drivingPollingIntervalSeconds: 60,
+  drivingMinDurationMinutes: 5,
   sleepTriggerSeconds: 300
 };

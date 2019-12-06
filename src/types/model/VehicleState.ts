@@ -1,6 +1,5 @@
-import {IVehicleSession} from './VehicleSession';
 
-export interface IVehicleState {
+export interface VehicleState {
   _id: string;
   id_s: string;
   vehicle_id: number;
@@ -29,8 +28,6 @@ export interface IVehicleState {
   side_mirror_heaters: boolean;
   smart_preconditioning: boolean;
   is_user_present: boolean;
-  usable_battery_level: number
-
-  session?: IVehicleSession
+  usable_battery_level: number;
 }
 

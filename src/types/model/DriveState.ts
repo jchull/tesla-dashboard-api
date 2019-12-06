@@ -1,7 +1,7 @@
-import {IDriveSession} from './DriveSession';
-import {IVehicleState} from './VehicleState';
+import {DriveSession} from './DriveSession';
+import {VehicleState} from './VehicleState';
 
-export interface IDriveState extends IVehicleState {
+export interface DriveState extends VehicleState {
   _id: string;
   gps_as_of: number;
   heading: number;
@@ -11,5 +11,5 @@ export interface IDriveState extends IVehicleState {
   shift_state: string;
   speed: number;
   odometer: number;
-  session?: IDriveSession
+  session?: DriveSession;
 }

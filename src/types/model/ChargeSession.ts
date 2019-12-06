@@ -1,9 +1,13 @@
-import {IChargeState} from './ChargeState';
-import {IVehicleSession} from './VehicleSession';
-import {IVehicle} from '../tesla/Vehicle';
+import {Vehicle} from '../tesla/Vehicle';
+import {ChargeState} from './ChargeState';
 
-export interface IChargeSession extends IVehicleSession {
+export interface ChargeSession {
   _id: string;
+  id_s: string;
+  start_date: number;
+  end_date?: number;
+  archived: boolean;
+  tags: string[];
   latitude?: number;
   longitude?: number;
   charge_current_request_max?: number;
@@ -27,7 +31,7 @@ export interface IChargeSession extends IVehicleSession {
   scheduled_charging_pending?: boolean;
   scheduled_charging_start_time?: number;
   trip_charging?: boolean;
-  first: IChargeState;
-  last?: IChargeState;
-  vehicle?: IVehicle;
+  first: ChargeState;
+  last?: ChargeState;
+  vehicle?: Vehicle;
 }

@@ -1,7 +1,7 @@
-import {IChargeSession} from './ChargeSession';
-import {IVehicleState} from './VehicleState';
+import {ChargeSession} from './ChargeSession';
+import {VehicleState} from './VehicleState';
 
-export interface IChargeState extends IVehicleState {
+export interface ChargeState extends VehicleState {
   _id: string;
   charge_current_request: number;
   charge_energy_added: number;
@@ -16,5 +16,5 @@ export interface IChargeState extends IVehicleState {
   charging_state: string;
   time_to_full_charge: number;
 
-  session?: IChargeSession
+  session?: ChargeSession
 }

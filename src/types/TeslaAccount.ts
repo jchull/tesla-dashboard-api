@@ -1,4 +1,4 @@
-export interface ITeslaAccount {
+export interface TeslaAccount {
   _id?: string;
   token_created_at?: number;
   token_expires_in?: number;

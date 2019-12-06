@@ -1,4 +1,4 @@
-export interface IConfiguration {
+export interface Configuration {
   _id?: string;
   apiPort: number;
   ownerBaseUrl: string;
