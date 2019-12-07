@@ -16,5 +16,5 @@ export interface ChargeState extends VehicleState {
   charging_state: string;
   time_to_full_charge: number;
 
-  session?: ChargeSession
+  session?: ChargeSession;
 }
