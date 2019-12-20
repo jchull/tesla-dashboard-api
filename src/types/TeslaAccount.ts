@@ -7,5 +7,6 @@ export interface TeslaAccount {
   email: string;
   username?: string;
   account_status?: string;
+  password?: string;
 }
 
